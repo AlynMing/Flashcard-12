@@ -6,7 +6,7 @@
 
 ### App Walk-though
 
-<img src="flashcardAppDemoLab2" width=200><br>
+<img src="flashcardAppDemoLab2.gif" width=200><br>
 
 `TODO://` In the User stories section below, add an `x` between the `-[ ]` like this `- [x]` for any user story you complete. (☝️ Remove this paragraph after after checking off user stories)
 
