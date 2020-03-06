@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
             {
                 findViewById(R.id.flashcard_answer).setVisibility(View.VISIBLE);
                 findViewById(R.id.flashcard_question).setVisibility(View.INVISIBLE);
-            };
+            }
         });
 
         findViewById(R.id.add_icon).setOnClickListener(new View.OnClickListener() {
@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
             {
                 findViewById(R.id.flashcard_question).setVisibility(View.VISIBLE);
                 findViewById(R.id.flashcard_answer).setVisibility(View.INVISIBLE);
-            };
+            }
         });
     }
 
