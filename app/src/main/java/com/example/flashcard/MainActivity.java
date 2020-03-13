@@ -3,16 +3,16 @@ package com.example.flashcard;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.content.Intent;
 import android.widget.TextView;
-
-import org.w3c.dom.Text;
-
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
+
+    FlashcardDatabase flashcardDatabase;
+    List<Flashcard> allFlashcards;
+    int currentCardDisplayedIndex = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,13 +21,10 @@ public class MainActivity extends AppCompatActivity {
         flashcardDatabase = new FlashcardDatabase(getApplicationContext());
         allFlashcards = flashcardDatabase.getAllCards();
 
-        String s = "";
-        for(Flashcard flashcard: allFlashcards) {
-            s += "QUESTION: " + flashcard.getQuestion() +
-                    " ANSWER: " + flashcard.getAnswer() + " " + flashcard.getWrongAnswer1() +
-                    " " + flashcard.getWrongAnswer2() + "\n";
+        if (allFlashcards != null && allFlashcards.size() > 0) {
+            ((TextView) findViewById(R.id.flashcard_question)).setText(allFlashcards.get(0).getQuestion());
+            ((TextView) findViewById(R.id.flashcard_answer)).setText(allFlashcards.get(0).getAnswer());
         }
-        Log.d("MAINACTIVITY", s);
 
         findViewById(R.id.flashcard_question).setOnClickListener(new View.OnClickListener()
         {
@@ -46,11 +43,6 @@ public class MainActivity extends AppCompatActivity {
                 MainActivity.this.startActivityForResult(intent, 100);
             }
         });
-
-        if (allFlashcards != null && allFlashcards.size() > 0) {
-            ((TextView) findViewById(R.id.flashcard_question)).setText(allFlashcards.get(0).getQuestion());
-            ((TextView) findViewById(R.id.flashcard_answer)).setText(allFlashcards.get(0).getAnswer());
-        }
 
         findViewById(R.id.flashcard_answer).setOnClickListener(new View.OnClickListener()
         {
@@ -78,6 +70,9 @@ public class MainActivity extends AppCompatActivity {
                         get(currentCardDisplayedIndex).getQuestion());
                 ((TextView) findViewById(R.id.flashcard_answer)).setText(allFlashcards.
                         get(currentCardDisplayedIndex).getAnswer());
+
+                findViewById(R.id.flashcard_question).setVisibility(View.VISIBLE);
+                findViewById(R.id.flashcard_answer).setVisibility(View.INVISIBLE);
             }
         });
     }
@@ -97,12 +92,8 @@ public class MainActivity extends AppCompatActivity {
 
                 flashcardDatabase.insertCard(new Flashcard(newQuestion, newAnswer));
                 allFlashcards = flashcardDatabase.getAllCards();
+
             }
         }
-
     }
-
-    FlashcardDatabase flashcardDatabase;
-    List<Flashcard> allFlashcards;
-    int currentCardDisplayedIndex = 0;
 }
