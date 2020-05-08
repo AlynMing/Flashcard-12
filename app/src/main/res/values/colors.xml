@@ -4,7 +4,10 @@
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
     <color name="navyBlue">#0033CC</color>
-    <color name="cream">#ffe8e2</color>
     <color name="black">#000000</color>
     <color name="white">#FFFFFF</color>
+    <color name="paletteA">#efa8e4</color>
+    <color name="paletteB">#f8e1f4</color>
+    <color name="paletteC">#fff0f5</color>
+    <color name="paletteD">#97e5ef</color>
 </resources>
