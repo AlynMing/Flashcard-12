@@ -2,7 +2,7 @@
 ## Lab 4
 
 ### App Description
-`TODO://` This app simulates a series of flashcards. Additional animations have been added to enhance user experience when transitioning between cards.
+This app simulates a series of flashcards. Additional animations have been added to enhance user experience when transitioning between cards.
 
 ### App Walk-though
 
@@ -22,7 +22,7 @@
 ## Lab 3
 
 ### App Description
-`TODO://` This simulates a series of flashcards. Users can now create new cards and save them, then browse through their collection.
+This simulates a series of flashcards. Users can now create new cards and save them, then browse through their collection.
 
 ### App Walk-though
 <img src="flashcardAppDemoLab3.gif" width=200><br>
